@@ -1,0 +1,139 @@
+:root {
+    --header-color: white;
+    --font-color: #aed3e1;
+    --bg-color: #070040;
+ }
+ 
+ body {
+    font-family: Arial, sans-serif;
+    color: var(--font-color);
+    background-color: var(--bg-color);
+    display: grid;
+    justify-content: center;
+    grid-gap: 5px 50px;
+    grid-template-columns: auto;
+    grid-template-areas: "head" "members" "concerts" "contact";
+ }
+ 
+ header {
+    grid-area: head;
+ }
+ 
+ header > img {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+ }
+ 
+ h1 {
+    color: var(--header-color);
+    font-size: 3rem;
+    font-style: italic;
+    font-variant: small-caps;
+    text-align: center;
+ }
+ 
+ h2 {
+    color: var(--header-color);
+    font-size: 2.5rem;
+    font-variant: small-caps;
+ }
+ 
+ section {
+    margin-left: 20px;
+    margin-right: 20px;
+ }
+ 
+ #members {
+    grid-area: members;
+ }
+ 
+ #members ul {
+    list-style-type: circle;
+    margin: 0;
+    padding-inline-start: 12px;
+ }
+ 
+ #members img {
+    margin-right: 20px;
+    margin-bottom: 10px;
+ }
+ 
+ .band-member {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+ }
+ 
+ #concerts {
+    grid-area: concerts;
+ }
+ 
+ #contact {
+    grid-area: contact;
+ }
+ 
+ .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ }
+ 
+ .nav {
+    text-align: center;
+    margin-top: 12px;
+ }
+ 
+ .nav a {
+    text-decoration: none;
+    text-transform: lowercase;
+    font-weight: bold;
+    font-size: larger;
+    margin-left: 10px;
+    margin-right: 10px;
+ }
+ 
+ a:link {
+    color: #aed3e1;
+ }
+ 
+ a:visited {
+    color: #aed3e1;
+ }
+ 
+ a:hover {
+    color: yellow;
+ }
+ 
+ a:active {
+    color: purple;
+ }
+ 
+ tr:nth-child(even) {
+    background: #170070
+ }
+ 
+ td {
+    padding: 10px;
+ }
+ 
+ /* tablets */   
+@media all and (min-width: 600px) {
+    body {
+       grid-template-columns: auto auto;
+       grid-template-areas: 
+          "head head" 
+          "members concerts" 
+          "members contact";
+    }
+    .band-member {
+       flex-direction: column;
+    }
+ }
+
+ /* desktop */
+@media all and (min-width: 800px) {
+    .band-member {
+       flex-direction: row;
+    }
+ }
